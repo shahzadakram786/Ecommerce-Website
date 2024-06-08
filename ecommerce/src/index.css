@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.menu-container {
+    background-color: #24252b;
+    opacity: 0;
+    transform: translate(-100%);
+}
