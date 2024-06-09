@@ -73,10 +73,31 @@ const Header = () => {
 
           <div className="flex items-center gap-8 icons">
             <div className="uppercase hidden lg:block text-inherit relative z-20">
-              <CustomLink>Login</CustomLink>
-              <span className="">/</span>
-              <CustomLink>Regester</CustomLink>
+              <CustomLink
+                className={`${
+                  isScrolled || isHomePage ? "text-white" : "text-primary"
+                }`}
+              >
+                Login
+              </CustomLink>
+
+              <span
+                className={`${
+                  isScrolled || isHomePage ? "text-white" : "text-primary"
+                }`}
+              >
+                /
+              </span>
+
+              <CustomLink
+                className={`${
+                  isScrolled || isHomePage ? "text-white" : "text-primary"
+                }`}
+              >
+                Regester
+              </CustomLink>
             </div>
+
             <div className="icon flex items-center justify-center gap-6">
               <IoSearchOutline size={24} />
 
