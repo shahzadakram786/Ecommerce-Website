@@ -98,7 +98,11 @@ const Header = () => {
               </CustomLink>
             </div>
 
-            <div className="icon flex items-center justify-center gap-6">
+            <div
+              className={`icon flex items-center justify-center gap-6 ${
+                isScrolled || isHomePage ? "text-white" : "text-primary"
+              }`}
+            >
               <IoSearchOutline size={24} />
 
               <div className=" relative z-20">
