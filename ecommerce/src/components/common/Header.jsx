@@ -2,12 +2,19 @@ import { useEffect, useRef, useState } from "react";
 import LogoImg from "../../assets/common/logo.png";
 import { menulists } from "../../assets/data/data";
 import { CustomNavLink, CustomLink, Badges } from "./CustomComponents";
-import { IoCartOutline, IoSearchOutline } from "react-icons/io5";
+import {
+  IoCartOutline,
+  IoHeartOutline,
+  IoSearchOutline,
+} from "react-icons/io5";
+import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
+import { useLocation } from "react-router-dom";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const menuRef = useRef(null);
+  const location = useLocation(null);
+  const menuRef = useRef();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -33,7 +40,7 @@ const Header = () => {
       document.removeEventListener("mousedown", closeMenuOutSide);
       window.removeEventListener("scroll", handleScroll);
     };
-  });
+  }, []);
 
   //we can now only show black box in home page
   const isHomePage = location.pathname === "/";
@@ -75,7 +82,7 @@ const Header = () => {
             <div className="uppercase hidden lg:block text-inherit relative z-20">
               <CustomLink
                 className={`${
-                  isScrolled || isHomePage ? "text-white" : "text-primary"
+                  isScrolled || !isHomePage ? "text-primary" : "text-white"
                 }`}
               >
                 Login
@@ -83,7 +90,7 @@ const Header = () => {
 
               <span
                 className={`${
-                  isScrolled || isHomePage ? "text-white" : "text-primary"
+                  isScrolled || !isHomePage ? "text-primary" : "text-white"
                 }`}
               >
                 /
@@ -91,7 +98,7 @@ const Header = () => {
 
               <CustomLink
                 className={`${
-                  isScrolled || isHomePage ? "text-white" : "text-primary"
+                  isScrolled || !isHomePage ? "text-primary" : "text-white"
                 }`}
               >
                 Regester
@@ -106,13 +113,47 @@ const Header = () => {
               <IoSearchOutline size={24} />
 
               <div className=" relative z-20">
+                <IoHeartOutline size={24} />
+
+                <div className="absolute -top-2 -right-1.5">
+                  <Badges color="bg-primary-green">0</Badges>
+                </div>
+              </div>
+
+              <div className=" relative z-20">
                 <IoCartOutline size={24} />
 
                 <div className="absolute -top-2 -right-1.5">
                   <Badges color="bg-primary-green">0</Badges>
                 </div>
               </div>
+
+              <button
+                onClick={toggleMenu}
+                className="lg:hidden w-10 h-10 flex justify-center items-center bg-black text-white focus:outline-none"
+              >
+                {isOpen ? (
+                  <AiOutlineClose size={25} />
+                ) : (
+                  <AiOutlineMenu size={25} />
+                )}
+              </button>
             </div>
+          </div>
+
+          {/* responsive menu if below 786px */}
+
+          <div
+            ref={menuRef}
+            className={`lg:flex lg:items-center lg:w-auto w-full p-5 absolute right-0 top-full menu-container ${
+              isOpen ? "open" : "closed"
+            } `}
+          >
+            {menulists.map((list) => (
+              <li key={list.id} className="uppercase list-none">
+                <CustomNavLink href={list.path}>{list.link}</CustomNavLink>
+              </li>
+            ))}
           </div>
         </nav>
       </header>
