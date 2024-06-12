@@ -2,11 +2,11 @@ import Footer from "./Footer";
 import Header from "./Header";
 import PropTypes from "prop-types";
 
-const Layout = (children) => {
+const Layout = ({ children }) => {
   return (
     <>
       <Header />
-      <main style={{ minHeight: "80vh" }}></main>
+      <main style={{ minHeight: "80vh" }}>{children}</main>
       <Footer />
     </>
   );
@@ -15,4 +15,5 @@ const Layout = (children) => {
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
 };
+
 export default Layout;

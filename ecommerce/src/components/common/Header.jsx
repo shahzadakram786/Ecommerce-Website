@@ -13,7 +13,7 @@ import { useLocation } from "react-router-dom";
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const location = useLocation(null);
+  const location = useLocation();
   const menuRef = useRef();
 
   const toggleMenu = () => {
@@ -72,7 +72,9 @@ const Header = () => {
             <div className="hidden lg:flex items-center justify-between gap-9">
               {menulists.map((list) => (
                 <li key={list.id} className="uppercase list-none">
-                  <CustomNavLink href={list.path}>{list.link}</CustomNavLink>
+                  <CustomNavLink href={list.path} className="className">
+                    {list.link}
+                  </CustomNavLink>
                 </li>
               ))}
             </div>
@@ -151,7 +153,9 @@ const Header = () => {
           >
             {menulists.map((list) => (
               <li key={list.id} className="uppercase list-none">
-                <CustomNavLink href={list.path}>{list.link}</CustomNavLink>
+                <CustomNavLink href={list.path} className="className">
+                  {list.link}
+                </CustomNavLink>
               </li>
             ))}
           </div>

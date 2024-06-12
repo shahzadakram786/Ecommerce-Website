@@ -66,6 +66,7 @@ export const herolist = [
     description:
       "Sell globally in minutes with localized currencies, languages, and experiences in every market.",
     image: "../images/hero/h2.png",
+
     price: [
       {
         color: "red",
