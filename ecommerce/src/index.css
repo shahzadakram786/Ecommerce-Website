@@ -1,7 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 .menu-container {
     background-color: #24252b;
     opacity: 0;
@@ -22,15 +21,15 @@
 }
 
 .header {
-    background-color: #f8f9fa;
+    /* background-color: #f8f9fa; */
     position: fixed;
     width: 100%;
     top: 0;
-    z-index: 4;
+    z-index: 25;
     transition: background-color 0.2s ease;
 }
 
-.header .scrolled {
+.header.scrolled {
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0 0 0 0.1);
     animation: fadeInDown 0.5s ease;
@@ -42,7 +41,6 @@
         transform: translateY(-50px);
         opacity: 0;
     }
-
     to {
         transform: translateY(0);
         opacity: 1;

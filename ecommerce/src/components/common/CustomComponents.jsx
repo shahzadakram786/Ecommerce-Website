@@ -39,7 +39,7 @@ const Span = ({ children }) => {
 
 const CustomNavLink = ({ href, className, children }) => {
   const linkStyles =
-    "text-[15px font-medium text-gray-600 cursor-pointer list-none]";
+    "text-[15px] font-medium text-gray-600 cursor-pointer list-none";
 
   return (
     <NavLink
@@ -56,7 +56,7 @@ const CustomNavLink = ({ href, className, children }) => {
 };
 const CustomLink = ({ className, children }) => {
   const linkStyles =
-    "text-[15px font-medium text-gray-600 cursor-pointer list-none]";
+    "text-[15px] font-medium text-gray-600 cursor-pointer list-none";
 
   return (
     <NavLink className={`${className} ${linkStyles} `}>{children}</NavLink>
@@ -90,19 +90,19 @@ Title.propTypes = {
   className: PropTypes.node.isRequired,
 };
 
-BodyOne.PropTypes = {
+BodyOne.propTypes = {
   children: PropTypes.node.isRequired,
   className: PropTypes.node.isRequired,
 };
 
-BodyTwo.PropTypes = {
+BodyTwo.propTypes = {
   children: PropTypes.node.isRequired,
 };
-Caption.PropTypes = {
+Caption.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-Span.PropTypes = {
+Span.propTypes = {
   children: PropTypes.node.isRequired,
 };
 

@@ -109,7 +109,7 @@ const Header = () => {
 
             <div
               className={`icon flex items-center justify-center gap-6 ${
-                isScrolled || isHomePage ? "text-white" : "text-primary"
+                isScrolled || !isHomePage ? "text-primary" : "text-white"
               }`}
             >
               <IoSearchOutline size={24} />

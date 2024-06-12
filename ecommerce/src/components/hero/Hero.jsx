@@ -6,8 +6,8 @@ import PropTypes from "prop-types";
 const Hero = () => {
   return (
     <div>
-      <section className="h-[50vh] lg:h-[90] mt-20 bg-white-100 relative z-1">
-        {herolist.map((item) => (
+      <section className="h-[50vh] lg:h-[90vh] mt-20 bg-white-100 relative z-1">
+        {herolist.slice(0, 1).map((item) => (
           <HeroItem
             key={item.id}
             title={item.title}
@@ -36,7 +36,7 @@ export const HeroItem = ({ title, description, prices, colors, image }) => {
   };
   return (
     <>
-      <section className="content flex justify-between lg:px-16 h-[50vh] lg:h-[90vh relative z-20]">
+      <section className="content flex justify-between lg:px-16 h-[50vh] lg:h-[90vh] relative z-20">
         <div className="left w-1/2 p-8 lg:p-32 lg:py-64">
           <Title
             level={1}
@@ -74,9 +74,14 @@ export const HeroItem = ({ title, description, prices, colors, image }) => {
             <button className="secondary-btn uppercase">View Shop</button>
           </div>
         </div>
-        <div className="">
-          <img src={image} alt="nothing" className="" />
+        <div className="right bg-white p-5 w-1/2 h-full flex justify-center items-center relative z-50">
+          <img
+            src={image}
+            alt="Products-hero"
+            className="h-[60vh] w-full object-contain"
+          />
         </div>
+        <div className="lg:bg-black lg:h-[96vh] lg:absolute lg:top-0 lg:right-0 lg:w-1/3 lg:-z-10"></div>
       </section>
     </>
   );
