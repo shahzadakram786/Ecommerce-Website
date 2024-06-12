@@ -21,7 +21,7 @@
 }
 
 .header {
-    /* background-color: #f8f9fa; */
+    background-color: #f7f7f7;
     position: fixed;
     width: 100%;
     top: 0;
@@ -31,7 +31,7 @@
 
 .header.scrolled {
     background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0 0 0 0.1);
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
     animation: fadeInDown 0.5s ease;
     z-index: 100;
 }
@@ -129,4 +129,8 @@
 .secondary-btn:hover:after {
     right: 100%;
     opacity: 1;
+}
+
+section {
+    background-color: #f7f7f7;
 }
