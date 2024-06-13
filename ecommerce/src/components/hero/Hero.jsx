@@ -133,6 +133,44 @@ export const HeroItem = ({ title, description, prices, colors, image }) => {
   );
 };
 
+const Banner = () => {
+  <>
+    <div className="py-20 container flex flex-col lg:flex-row items-center gap-5">
+      <div>
+        <BannerCard
+          title="Wooden Water Bottles"
+          desc="UP TO 60% OFF"
+          cover="./images/hero/product1-1.png"
+        />
+        <BannerCard title="" desc="" cover="./images/hero/product1-1.png" />
+        <BannerCard title="" desc="" cover="./images/hero/product1-1.png" />
+      </div>
+    </div>
+  </>;
+};
+
+const BannerCard = ({ title, desc, cover, className, classSecond }) => {
+  return (
+    <>
+      <div className="w-full h-full relative">
+        <img src={cover} alt="" />
+        <div
+          className={`${
+            className
+              ? "absolute bottom-0 p-8 w-full"
+              : "flex absolute bottom-0 p-8 w-full"
+          }`}
+        >
+          <div>
+            <Title level={2}>{title}</Title>
+            <p className="text-lg font-normal leading-none">{desc} </p>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
 export default Hero;
 
 HeroItem.propTypes = {
