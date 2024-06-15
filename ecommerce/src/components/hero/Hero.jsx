@@ -142,8 +142,8 @@ const Banner = () => {
           desc="UP TO 60% OFF"
           cover="./images/hero/product1-1.png"
         />
-        <BannerCard title="" desc="" cover="./images/hero/product1-1.png" />
-        <BannerCard title="" desc="" cover="./images/hero/product1-1.png" />
+        <BannerCard title="" desc="" cover="./images/hero/product2.png" />
+        <BannerCard title="" desc="" cover="./images/hero/product3.png" />
       </div>
     </div>
   </>;
