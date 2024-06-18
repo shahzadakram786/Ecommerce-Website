@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 .menu-container {
     background-color: #24252b;
     opacity: 0;
@@ -41,6 +42,7 @@
         transform: translateY(-50px);
         opacity: 0;
     }
+
     to {
         transform: translateY(0);
         opacity: 1;
@@ -133,4 +135,28 @@
 
 section {
     background-color: #f7f7f7;
+}
+
+
+/* product  */
+
+.product-btn {
+    padding: 5px 11px;
+    font-size: 12px;
+}
+
+.product .images {
+    position: relative;
+    overflow: hidden;
+}
+
+.product.card .overlay {
+    opacity: 0;
+    transition: transform 0.3s ease;
+    transform: translateY(100%);
+}
+
+.product.card:hover .overlay {
+    opacity: 1;
+    transform: translateY(0);
 }
